@@ -5,7 +5,8 @@ I always used a exported binary for testing the performance as they are faster.
 
 Useful optimizations(I found so far):
 - Descrease the cell size of the physics engine
-- Use 32-Bit export as it has a better performance(32-Bit Floats rather than 64 bits are faster)
+- Use 32-Bit export as it has a better performance(32-Bit Floats rather than 64 bits are faster)**Only Godot 2**
+- Use 64-Bit export as it has a better performance**Only Godot 3*
 
 ## Benchmarking
 - Every benchmark runs for a fixed time(8 seconds by default) and counts every rendered frame
@@ -20,6 +21,12 @@ You can tweak the benchmark by setting the object count in the code, change the 
 | Benchmark | n | Average | Minimum | Maximum | Time(sec) | Object Count |
 | --- | --- | --- | --- | --- | --- | --- |
 | Circle Physics | 5 | 5904.2 | 4570 | 6295 | 8 | 2000 |
+
+**Godot 3.0.2**, i5-6260U CPU @ 1.80GHz, Mesa 17.3.8 DRI Intel(R) Iris Graphics 540 (Skylake GT3e), Debian(testing) GNU/Linux Kernel 4.15
+
+| Benchmark | n | Average | Minimum | Maximum | Time(sec) | Object Count |
+| --- | --- | --- | --- | --- | --- | --- |
+| Circle Physics | 5 | 14888 | 12955 | 16115 | 8 | 2000 |
 
 
 ## Project
