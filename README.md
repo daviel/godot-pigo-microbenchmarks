@@ -6,7 +6,8 @@ I always used a exported binary for testing the performance as they are faster.
 Useful optimizations(I found so far):
 - Descrease the cell size of the physics engine
 - Use 32-Bit export as it has a better performance(32-Bit Floats rather than 64 bits are faster)**Only Godot 2**
-- Use 64-Bit export as it has a better performance**Only Godot 3*
+- Use 64-Bit export as it has a better performance**Only Godot 3**
+- Use multithread physics **Only Godot 3** (can lead to crashes for more complex scenes)
 
 ## Benchmarking
 - Every benchmark runs for a fixed time(8 seconds by default) and counts every rendered frame
@@ -26,7 +27,7 @@ You can tweak the benchmark by setting the object count in the code, change the 
 
 | Benchmark | n | Average | Minimum | Maximum | Time(sec) | Object Count |
 | --- | --- | --- | --- | --- | --- | --- |
-| Circle Physics | 5 | 14888 | 12955 | 16115 | 8 | 2000 |
+| Circle Physics | 5 | ~30000 | ~25000 | ~32000 | 8 | 2000 |
 
 
 ## Project
