@@ -1,0 +1,129 @@
+[gd_scene load_steps=9 format=2]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="CapsuleMesh" id=2]
+
+[sub_resource type="SphereMesh" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="CylinderMesh" id=5]
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("OmniLight2:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -3.24451, 1.88255, -0.571945 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("OmniLight:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 3.28634, 1.88255, -2.33479 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "movelights"
+length = 12.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("OmniLight2:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 6, 9, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -5, 5, 5 ), Vector3( 5, 5, 5 ), Vector3( 5, 5, -5 ), Vector3( -5, 5, -5 ), Vector3( -5, 5, 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("OmniLight:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3, 6, 9, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 5, 5, -5 ), Vector3( -5, 5, -5 ), Vector3( -5, 5, 5 ), Vector3( 5, 5, 5 ), Vector3( 5, 5, -5 ) ]
+}
+
+[sub_resource type="GDScript" id=8]
+script/source = "extends AnimationPlayer
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	play(\"movelights\")
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+mesh = SubResource( 1 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5, 1, -5 )
+mesh = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -5 )
+mesh = SubResource( 3 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 5 )
+mesh = SubResource( 4 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 5 )
+mesh = SubResource( 5 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.28634, 1.88255, -2.33479 )
+light_energy = 0.25
+shadow_enabled = true
+omni_range = 15.0
+
+[node name="OmniLight2" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24451, 1.88255, -0.571945 )
+light_energy = 0.25
+shadow_enabled = true
+omni_range = 15.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 6 )
+anims/movelights = SubResource( 7 )
+script = SubResource( 8 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 10 )
