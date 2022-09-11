@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends CanvasLayer
+
+
+var count = 0
+var score = 0
+var runningTime = 8 # in seconds
+var time = 0
+
+onready var label2 = $Panel/Label1
+onready var label3 = $Panel/Label2
+
+var sprites = []
+var active = false
+
+func _ready():
+	set_process(true)
+	pass
+
+func _process(delta):
+	time = time + delta
+	score = score + Engine.get_frames_per_second()
+	label2.set_text(String(Engine.get_frames_per_second()))
+	label3.set_text(String(score))
+	if(time > 8):
+		print(score)
+		get_tree().quit()
+	pass
+"
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = SubResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Label1" type="Label" parent="Panel"]
+margin_left = 10.0
+margin_top = 24.0
+text = "60"
+
+[node name="Label2" type="Label" parent="Panel"]
+margin_left = 10.0
+margin_top = 40.0
+text = "60"

@@ -14,6 +14,10 @@ config/name="PiBenchmark"
 run/main_scene="res://3dlights.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/vsync/use_vsync=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
