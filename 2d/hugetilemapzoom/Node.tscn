@@ -10,7 +10,8 @@ script/source = "extends Node
 onready var tilemap = $TileMap
 
 func _ready():
-	generate_map(256, 256)
+	generate_map(128, 128)
+	$Camera2D.position = Vector2(128*8, 128*8)
 	$AnimationPlayer.play(\"zoomout\")
 	pass
 
@@ -1483,7 +1484,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 10 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 50, 50 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 12, 12 ) ]
 }
 
 [node name="Node" type="Node"]

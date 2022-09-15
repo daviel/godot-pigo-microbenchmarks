@@ -10,7 +10,7 @@ var sprites = []
 var active = false
 
 func _ready():
-	while count < 1000:
+	while count < 250:
 		spawn_sprite()
 	pass
 
