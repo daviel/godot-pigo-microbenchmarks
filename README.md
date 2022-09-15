@@ -16,7 +16,7 @@ You can tweak the benchmark by setting the object count in the code, change the 
 | Benchmark | Result | Parameters |
 | --- | --- | --- |
 | hugetilemapzoom | 311 | 128x128 |
-| lights | 311 | - |
-| physicspeak | 311 | 250 |
-| lightsshadow | 311 | - |
-| massphysics | 311 | 0.05 obj/s |
+| lights | 268 | - |
+| physicspeak | 697 | 250 |
+| lightsshadow | 355 | - |
+| massphysics | 530 | 0.05 obj/s |
