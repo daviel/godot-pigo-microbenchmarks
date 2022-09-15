@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [sub_resource type="SphereShape" id=1]
 
 [sub_resource type="SphereMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.294118, 0.623529, 0.329412, 1 )
 
 [node name="Cube" type="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0 )
@@ -16,3 +19,4 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98023e-08, 0, 1.19209e-07 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
+material/0 = SubResource( 3 )

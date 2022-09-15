@@ -21,7 +21,7 @@ func _ready():
 
 func _process(delta):
 	time = time + delta
-	score = score + Engine.get_frames_per_second()
+	score = score + 1
 	label2.set_text(String(Engine.get_frames_per_second()))
 	label3.set_text(String(score))
 	if(time > runningTime):
