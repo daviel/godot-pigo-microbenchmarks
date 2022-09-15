@@ -10,7 +10,7 @@ script/source = "extends Node
 onready var tilemap = $TileMap
 
 func _ready():
-	generate_map(512, 512)
+	generate_map(256, 256)
 	$AnimationPlayer.play(\"zoomout\")
 	pass
 
@@ -1501,5 +1501,5 @@ anims/RESET = SubResource( 3 )
 anims/zoomout = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 4096, 4096 )
+position = Vector2( 2048, 2048 )
 current = true
