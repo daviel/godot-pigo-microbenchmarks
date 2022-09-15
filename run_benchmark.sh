@@ -4,6 +4,7 @@ declare -a paths=(./2d/hugetilemapzoom ./2d/lights ./2d/physicspeak ./3d/lightss
 
 echo "STARTING BENCHMARK"
 echo ""
+echo "" > results.txt
 
 for i in "${paths[@]}"
 do
@@ -13,4 +14,5 @@ do
 	RESULT=`echo $RESULT | awk '{print $NF}'`
 	echo "Result is $RESULT"
 	echo ""
+	echo "$i: $RESULT" >> results.txt
 done
