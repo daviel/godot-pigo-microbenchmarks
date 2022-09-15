@@ -29,3 +29,8 @@ position = Vector2( 1290, 120 )
 shape = SubResource( 2 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 640, 240 )
+current = true
+zoom = Vector2( 4, 4 )

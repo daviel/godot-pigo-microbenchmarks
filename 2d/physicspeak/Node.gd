@@ -10,14 +10,14 @@ var sprites = []
 var active = false
 
 func _ready():
-	while count < 2000:
+	while count < 1000:
 		spawn_sprite()
 	pass
 
 func spawn_sprite():
 	count = count + 1
-	var x = randf() * OS.get_window_size().x #+ OS.get_window_size().x
-	var y = randf() * OS.get_window_size().y
+	var x = randf() * OS.get_window_size().x * 4
+	var y = randf() * OS.get_window_size().y * 2
 	
 	var newSprite = sprite.instance()
 	newSprite.set_position(Vector2(x, y))

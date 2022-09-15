@@ -1497,6 +1497,7 @@ anims/rotate = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 4, 4 )
 
 [node name="Node2D" type="Node2D" parent="."]
 
