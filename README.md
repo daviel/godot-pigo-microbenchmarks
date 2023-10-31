@@ -11,12 +11,4 @@ You can tweak the benchmark by setting the object count in the code, change the 
 
 ## Results
 
-**Godot 3.4.4**, Pi Zero W 2, Raspbian GNU/Linux 11 (bullseye), Linux pigo1 5.15.32-v7+ #1538 SMP Thu Mar 31 19:38:48 BST 2022 armv7l GNU/Linux, KMS
-
-| Benchmark | Result | Parameters |
-| --- | --- | --- |
-| hugetilemapzoom | 311 | 128x128 |
-| lights | 268 | - |
-| physicspeak | 697 | 250 |
-| lightsshadow | 355 | - |
-| massphysics | 530 | 0.05 obj/s |
+Results can be found in the wiki here: https://github.com/daviel/godot-pigo-microbenchmarks/wiki/Results
